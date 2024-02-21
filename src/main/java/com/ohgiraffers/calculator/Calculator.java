@@ -34,41 +34,55 @@ public class Calculator {
     Scanner sc = new Scanner(System.in);
 
 
-    public int calculator(int[] arrNum, char calSymbol) {
+    public void calculator(int[] arrNum, char calSymbol) {
 
-        int result = 0;
+        int result;
 
         switch (calSymbol) {
 
             case '+' :
                 result = arrNum[0] + arrNum[1];
+                System.out.println("계산중...");
+                System.out.println(arrNum[0] + " " + calSymbol + " " + arrNum[1] + " = " + result);
                 break;
 
             case '-' :
                 result = arrNum[0] - arrNum[1];
+                System.out.println("계산중...");
+                System.out.println(arrNum[0] + " " + calSymbol + " " + arrNum[1] + " = " + result);
                 break;
 
             case '*' :
                 result = arrNum[0] * arrNum[1];
+                System.out.println("계산중...");
+                System.out.println(arrNum[0] + " " + calSymbol + " " + arrNum[1] + " = " + result);
                 break;
 
             case '/' :
 
                 try {
-                    if (arrNum[1] != 0) {
-                        result = arrNum[0] / arrNum[1];
-                    }
+                    result = divideQuotient(arrNum[0], arrNum[1]);
+                    System.out.println("계산중...");
+                    System.out.println(arrNum[0] + " " + calSymbol + " " + arrNum[1] + " = " + result);
                 } catch (IllegalArgumentException e) {
                     System.out.println("0으로 나눌 수 없습니다.");
                 }
                 break;
 
             case '%' :
-                result = arrNum[0] % arrNum[1];
+                try {
+                    result = divideRemainder(arrNum[0], arrNum[1]);
+                    System.out.println("계산중...");
+                    System.out.println(arrNum[0] + " " + calSymbol + " " + arrNum[1] + " = " + result);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("0으로 나눌 수 없습니다.");
+                }
                 break;
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + calSymbol);
         }
 
-             return result;
 
     }
 
@@ -76,6 +90,22 @@ public class Calculator {
     public void print (int[] arrNum, char calSymbol, int result ) {
         System.out.println("계산중...");
         System.out.println(arrNum[0] + " " + calSymbol + " " + arrNum[1] + " = " + result);
+    }
+
+    public static int divideQuotient(int num1, int num2) throws IllegalArgumentException {
+        if (num2 == 0) {
+            throw new IllegalArgumentException("0으로 나누기는 불가능 합니다.");
+        }
+        int divideResult = num1 / num2;
+        return divideResult;
+    }
+
+    public static int divideRemainder(int num1, int num2) throws IllegalArgumentException {
+        if (num2 == 0) {
+            throw new IllegalArgumentException("0으로 나누기는 불가능 합니다.");
+        }
+        int divideResult = num1 % num2;
+        return divideResult;
     }
 
 
