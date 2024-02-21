@@ -5,6 +5,18 @@ import java.util.Scanner;
 public class Calculator {
 
 
+    public int[] inputNumber() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("계산하실 정수 두 개를 입력하세요. ");
+        System.out.print("첫 번째 정수 : ");
+        int num1 = sc.nextInt();
+        System.out.print("두 번째 정수 : ");
+        int num2 = sc.nextInt();
+        int[] arrNum = {num1, num2};
+        return arrNum;
+    }
+
+
     public Char inputSymbol() {
 
         Scanner sc = new Scanner(System.in);
@@ -61,9 +73,10 @@ public class Calculator {
     }
 
 
-    public void print (int[] arrNum, String calSybol, int result ) {
+    public void print (int[] arrNum, char calSymbol, int result ) {
         System.out.println("계산중...");
-        System.out.println(arrNum[0] + " " + calSybol + " " + arrNum[1] + " = " + result);
+        System.out.println(arrNum[0] + " " + calSymbol + " " + arrNum[1] + " = " + result);
     }
+
 
 }
