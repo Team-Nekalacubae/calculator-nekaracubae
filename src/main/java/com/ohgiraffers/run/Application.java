@@ -28,13 +28,9 @@ public class Application {
          */
         Calculator calc = new Calculator();
         System.out.println("======== 사칙연산 프로그램 ========");
-//        int[] inputNum = calc.inputNumber();
-//        char symbol = calc.inputSymbol();
-//        int result = calc.calculator(inputNum, symbol);
-        calc.print(calc.inputNumber(), calc.inputSymbol(), calc.calculator(calc.inputNumber(), calc.inputSymbol()));
-
-
-
-
+        int[] inputNum = calc.inputNumber();
+        char symbol = calc.inputSymbol();
+        int result = calc.calculator(inputNum, symbol);
+        calc.print(inputNum, symbol, calc.calculator(inputNum, symbol));
     }
 }
