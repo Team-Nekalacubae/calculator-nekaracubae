@@ -30,7 +30,9 @@ public class Application {
         System.out.println("======== 사칙연산 프로그램 ========");
         int[] inputNum = calc.inputNumber();
         char symbol = calc.inputSymbol();
-        int result = calc.calculator(inputNum, symbol);
-        calc.print(inputNum, symbol, calc.calculator(inputNum, symbol));
+//        int result = calc.calculator(inputNum, symbol);
+//        calc.print(inputNum, symbol,
+                calc.calculator(inputNum, symbol);
+
     }
 }
