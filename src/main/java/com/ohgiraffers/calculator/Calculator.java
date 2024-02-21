@@ -17,19 +17,19 @@ public class Calculator {
     }
 
 
-    public Char inputSymbol() {
+    public char inputSymbol() {
 
         Scanner sc = new Scanner(System.in);
         System.out.print("사칙연산 기호를 입력하세요 ('+', '-', '*', '/', '%'");
-        Char calSymbol = sc.next();
+        char calSymbol = sc.nextLine().charAt(0);
 
         if (!(calSymbol == '+' || calSymbol == '-' || calSymbol == '*' || calSymbol == '/' || calSymbol == '%')) {
 
             System.out.println("잘못된 기호를 입력하셨습니다.");
         }
 
-        Char calSymbol;
-
+        return calSymbol;
+    }
 
     Scanner sc = new Scanner(System.in);
 
@@ -53,6 +53,7 @@ public class Calculator {
                 break;
 
             case '/' :
+
                 try {
                     if (arrNum[1] != 0) {
                         result = arrNum[0] / arrNum[1];
@@ -68,7 +69,6 @@ public class Calculator {
         }
 
              return result;
-
 
     }
 
