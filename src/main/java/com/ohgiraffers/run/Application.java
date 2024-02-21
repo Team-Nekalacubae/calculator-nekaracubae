@@ -26,6 +26,15 @@ public class Application {
         PR에 모든 팀원이 코드 리뷰할 것
         마지막 리뷰어는 Merge 수행
          */
+        Calculator calc = new Calculator();
+        System.out.println("======== 사칙연산 프로그램 ========");
+//        int[] inputNum = calc.inputNumber();
+//        char symbol = calc.inputSymbol();
+//        int result = calc.calculator(inputNum, symbol);
+        calc.print(calc.inputNumber(), calc.inputSymbol(), calc.calculator(calc.inputNumber(), calc.inputSymbol()));
+
+
+
 
     }
 }
