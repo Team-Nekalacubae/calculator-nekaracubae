@@ -53,21 +53,21 @@ public class Calculator {
                 break;
 
             case '/' :
-                result = arrNum[0] / arrNum[1];
-
-//                if (arrNum[1] == 0) {
-
-
-
-//                }
+                try {
+                    if (arrNum[1] != 0) {
+                        result = arrNum[0] / arrNum[1];
+                    }
+                } catch (IllegalArgumentException e) {
+                    System.out.println("0으로 나눌 수 없습니다.");
+                }
                 break;
 
             case '%' :
-                result = arrNum[0] + arrNum[1];
+                result = arrNum[0] % arrNum[1];
                 break;
         }
 
-            return result;
+             return result;
 
 
     }
