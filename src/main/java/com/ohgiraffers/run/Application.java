@@ -1,5 +1,7 @@
 package com.ohgiraffers.run;
 
+import com.ohgiraffers.calculator.Calculator;
+
 public class Application {
 
     public static void main(String[] args) {
@@ -24,5 +26,7 @@ public class Application {
         PR에 모든 팀원이 코드 리뷰할 것
         마지막 리뷰어는 Merge 수행
          */
+
+        Calculator cal = new Calculator();
     }
 }
